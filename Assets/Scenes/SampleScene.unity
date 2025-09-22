@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 180855490}
   - component: {fileID: 180855489}
   - component: {fileID: 180855488}
+  - component: {fileID: 180855492}
   m_Layer: 0
   m_Name: MainButton
   m_TagString: Untagged
@@ -290,14 +291,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180855487}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.60876137, y: 0, z: 0, w: 0.7933534}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.2, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.24999997, z: 0.5}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1605410811}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 1605410811}
   m_LocalEulerAnglesHint: {x: -75, y: 0, z: 0}
+--- !u!114 &180855492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180855487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f486f8f4091b53a4192053c884cfff1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickCounter: 0
+  textObj: {fileID: 1749083912}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +731,7 @@ GameObject:
   - component: {fileID: 1605410813}
   - component: {fileID: 1605410812}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: BaseClickButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -731,12 +745,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605410810}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 2, y: 4, z: 2}
+  m_LocalRotation: {x: -0.60876137, y: 0, z: -0, w: 0.7933534}
+  m_LocalPosition: {x: 0, y: -0.103527665, z: 0.3863703}
+  m_LocalScale: {x: 2, y: 0.79999995, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 180855491}
+  m_Children:
+  - {fileID: 180855491}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1605410812
 BoxCollider:
@@ -952,4 +967,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1604678683}
   - {fileID: 25147667}
-  - {fileID: 180855491}
+  - {fileID: 1605410811}
