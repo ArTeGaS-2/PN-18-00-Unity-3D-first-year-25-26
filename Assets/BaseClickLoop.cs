@@ -14,6 +14,10 @@ public class BaseClickLoop : MonoBehaviour
         ClickButton();
         ClickImpactEffect();
     }
+    private void OnMouseUp()
+    {
+        ClickImpactEffectDisable();
+    }
     private void ClickButton()
     {
         clickCounter++;
@@ -21,10 +25,18 @@ public class BaseClickLoop : MonoBehaviour
     }
     private void ClickImpactEffect()
     {
-        transform.localPosition = new Vector3(0, 0.25f, 0); // 0  0.5  0
+        if (buttonPressStatus == false)
+        {
+            transform.localPosition = new Vector3(0, 0.3f, 0); // 0  0.5  0
+            buttonPressStatus = true;
+        }
     }
     private void ClickImpactEffectDisable()
     {
-        transform.localPosition = new Vector3(0, 0.5f, 0);
+        if (buttonPressStatus == true)
+        {
+            transform.localPosition = new Vector3(0, 0.5f, 0);
+            buttonPressStatus = false;
+        } 
     }
 }
