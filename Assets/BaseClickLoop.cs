@@ -5,9 +5,17 @@ using TMPro;
 
 public class BaseClickLoop : MonoBehaviour
 {
+    public static BaseClickLoop Instance; // Сінглтон
+
     public int clickCounter = 0; // Змінна лічильника
+    public int coinsPerClick = 1; // Валюти за клік
+
     public TextMeshProUGUI textObj; // Об'єкт тексту на сцені
     public bool buttonPressStatus = false; // Чи натиснута кнопка
+    private void Start()
+    {
+        Instance = this;
+    }
 
     private void OnMouseDown()
     {
@@ -20,7 +28,7 @@ public class BaseClickLoop : MonoBehaviour
     }
     private void ClickButton()
     {
-        clickCounter++;
+        clickCounter += coinsPerClick;
         textObj.text = "Монет: " + clickCounter.ToString();
     }
     private void ClickImpactEffect()
