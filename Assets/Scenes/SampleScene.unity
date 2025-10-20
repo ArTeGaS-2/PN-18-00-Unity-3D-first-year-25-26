@@ -1106,6 +1106,7 @@ GameObject:
   - component: {fileID: 1604678681}
   - component: {fileID: 1604678680}
   - component: {fileID: 1604678684}
+  - component: {fileID: 1604678685}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1215,6 +1216,20 @@ MonoBehaviour:
   UIGameObjFolder: {fileID: 1552029808}
   shopObjFolder: {fileID: 1871466694}
   UIShopObjFolder: {fileID: 8989701}
+--- !u!114 &1604678685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604678679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5020da58d1db048b35d1790874f4ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickCounter: 0
+  coinsPerClick: 1
 --- !u!1 &1605410810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,8 +1529,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 45fee78bd0e4b734c9dd7b5722b5fdf6, type: 2}
+  m_sharedMaterial: {fileID: 4816486830870007821, guid: 45fee78bd0e4b734c9dd7b5722b5fdf6,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
