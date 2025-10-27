@@ -4,5 +4,19 @@ using UnityEngine;
 
 public class PlusOneBonus : MonoBehaviour
 {
-    
+    public Economy economy;
+    private void Awake()
+    {
+        economy = Economy.Instance;
+    }
+    public void PlusOneBonusButton()
+    {
+        // Поточна кількість "монет" більша, або дорівнює ціні бонусу
+        if (economy.clickCounter >= economy.TakeCurrentPrice())
+        {
+            economy.clickCounter -= economy.TakeCurrentPrice(); // Заплатили
+            economy.UpdateCounterText(); // Оновили текст лічильника
+            economy.coinsPerClick++; // Додали +1 за клік
+        }
+    }
 }

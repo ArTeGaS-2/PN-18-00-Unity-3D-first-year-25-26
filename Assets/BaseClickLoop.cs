@@ -7,17 +7,19 @@ public class BaseClickLoop : MonoBehaviour
 {
     public static BaseClickLoop Instance; // Сінглтон
 
-    public int clickCounter;
+    public float clickCounter;
     public int coinsPerClick;
 
-    public TextMeshProUGUI textObj; // Об'єкт тексту на сцені
+    private TextMeshProUGUI textObj; // Об'єкт тексту на сцені
     public bool buttonPressStatus = false; // Чи натиснута кнопка
     private void Start()
     {
         Instance = this;
         clickCounter = Economy.Instance.clickCounter;
         coinsPerClick = Economy.Instance.coinsPerClick;
-}
+
+        textObj = Economy.Instance.counterText;
+    }
 
     private void OnMouseDown()
     {

@@ -348,7 +348,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickCounter: 0
   coinsPerClick: 1
-  textObj: {fileID: 1749083912}
   buttonPressStatus: 0
 --- !u!1 &219382004
 GameObject:
@@ -1230,6 +1229,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickCounter: 0
   coinsPerClick: 1
+  clickBonusPrice: 10
+  clickBonusPriceMod: 15
+  counterText: {fileID: 1749083912}
+  coinsPerClickText: {fileID: 0}
+  clickBonusPriceText: {fileID: 0}
 --- !u!1 &1605410810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,7 +1486,7 @@ GameObject:
   - component: {fileID: 1749083913}
   - component: {fileID: 1749083912}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CounterText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
