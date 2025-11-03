@@ -32,8 +32,9 @@ public class BaseClickLoop : MonoBehaviour
     }
     private void ClickButton()
     {
-        clickCounter += coinsPerClick;
-        textObj.text = "Монет: " + clickCounter.ToString();
+        Economy.Instance.clickCounter += 
+            Economy.Instance.coinsPerClick;
+        Economy.Instance.UpdateCounterText();
     }
     private void ClickImpactEffect()
     {

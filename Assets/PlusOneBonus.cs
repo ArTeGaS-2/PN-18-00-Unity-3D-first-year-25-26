@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlusOneBonus : MonoBehaviour
 {
-    public Economy economy;
-    private void Awake()
+    private Economy economy;
+    private void Start()
     {
         economy = Economy.Instance;
     }
@@ -18,5 +18,9 @@ public class PlusOneBonus : MonoBehaviour
             economy.UpdateCounterText(); // Оновили текст лічильника
             economy.coinsPerClick++; // Додали +1 за клік
         }
+    }
+    private void OnMouseDown()
+    {
+        PlusOneBonusButton();
     }
 }

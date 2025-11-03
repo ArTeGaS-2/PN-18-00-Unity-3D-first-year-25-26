@@ -35,4 +35,12 @@ public class Economy : MonoBehaviour
     {
         counterText.text = "Монет: " + clickCounter.ToString();
     }
+    public void UpdatePerClickText()
+    {
+        coinsPerClickText.text = $"+ {coinsPerClick} за клік";
+    }
+    public void UpdatePerClickPriceText()
+    {
+
+    }
 }
