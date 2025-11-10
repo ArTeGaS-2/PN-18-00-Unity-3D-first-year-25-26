@@ -17,6 +17,9 @@ public class PlusOneBonus : MonoBehaviour
             economy.clickCounter -= economy.TakeCurrentPrice(); // Заплатили
             economy.UpdateCounterText(); // Оновили текст лічильника
             economy.coinsPerClick++; // Додали +1 за клік
+
+            Economy.Instance.UpdatePerClickText();
+            Economy.Instance.UpdatePerClickPriceText();
         }
     }
     private void OnMouseDown()

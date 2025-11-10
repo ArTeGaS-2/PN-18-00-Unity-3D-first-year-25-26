@@ -24,6 +24,11 @@ public class Economy : MonoBehaviour
     {
         Instance = this;
     }
+    private void Start()
+    {
+        UpdatePerClickText();
+        UpdatePerClickPriceText();
+    }
     public float TakeCurrentPrice()
     {
         // поточна÷≥на = базова ц≥на + (монет«а л≥к - 1) * модиф≥като÷≥ни
@@ -41,6 +46,6 @@ public class Economy : MonoBehaviour
     }
     public void UpdatePerClickPriceText()
     {
-
+        clickBonusPriceText.text = $"÷≥на за бонус: {TakeCurrentPrice()}";
     }
 }
