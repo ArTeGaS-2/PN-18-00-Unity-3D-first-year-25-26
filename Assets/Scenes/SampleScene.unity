@@ -1486,9 +1486,14 @@ MonoBehaviour:
   coinsPerClick: 1
   clickBonusPrice: 10
   clickBonusPriceMod: 15
+  coinsPerAutoClick: 0
+  autoClickBonusPrice: 25
+  autoClickBonusPriceMod: 50
   counterText: {fileID: 1749083912}
   coinsPerClickText: {fileID: 1636640953}
   clickBonusPriceText: {fileID: 581760287}
+  autoClickSecText: {fileID: 0}
+  autoClickSecPriceText: {fileID: 0}
 --- !u!1 &1605410810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,7 +1512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1605410811
 Transform:
   m_ObjectHideFlags: 0
@@ -1910,12 +1915,12 @@ GameObject:
   - component: {fileID: 2103386139}
   - component: {fileID: 2103386138}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: AnotherButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2103386137
 Transform:
   m_ObjectHideFlags: 0
@@ -1925,7 +1930,7 @@ Transform:
   m_GameObject: {fileID: 2103386136}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0.85, z: -7.77}
+  m_LocalPosition: {x: 0, y: 0.85, z: -6.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
