@@ -8,8 +8,6 @@ public class Player_Controller : MonoBehaviour
     public GameObject camera; 
     private Rigidbody rb; // фізичний компонент
 
-
-
     public float jumpVelocity = 5f; // сила стрибка
 
     private void Start()
