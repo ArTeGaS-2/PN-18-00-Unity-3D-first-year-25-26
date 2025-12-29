@@ -11,11 +11,16 @@ public class LvL_Gen : MonoBehaviour
 
     private IEnumerator SpawnPipes()
     {
+        Vector3 pos = transform.position;
+        float height = 0f;
+
         while (true)
         {
+            pos.y = Random.Range(-heightRange, heightRange);
+
             Instantiate( // Створити об'єкт
             pipesPrefab, // шаблон об'єкту
-            transform.position, // положення
+            pos, // положення
             Quaternion.identity); // обертання
 
             yield return new WaitForSeconds(spawnInterval);

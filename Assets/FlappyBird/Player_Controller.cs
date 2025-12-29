@@ -10,10 +10,23 @@ public class Player_Controller : MonoBehaviour
 
     public float jumpVelocity = 5f; // сила стрибка
 
+    [Header("Режим блювоти")]
+    public float rotateSpeed = 0f;
+    public bool vomMode = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
+    private void FixedUpdate()
+    {
+        if (vomMode)
+        {
+            camera.transform.Rotate(
+            0f, 0f, rotateSpeed * Time.fixedDeltaTime);
+        }
+    }
+
     private void Update()
     {
         // Стрибок
