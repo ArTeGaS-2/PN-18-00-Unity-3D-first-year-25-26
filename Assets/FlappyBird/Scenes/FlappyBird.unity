@@ -379,7 +379,7 @@ MonoBehaviour:
   camera: {fileID: 797090501}
   jumpVelocity: 6
   rotateSpeed: 100
-  vomMode: 1
+  vomMode: 0
 --- !u!1 &659098441
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,9 +840,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pipesPrefab: {fileID: 8392919320397796134, guid: 8875169cd49ece9409146804db69fedd,
     type: 3}
+  listOfAnotherPrefabs:
+  - {fileID: 8392919320397796134, guid: fd293a089601cdf44b03e2eb3386495e, type: 3}
   heightRange: 1.98
   spawnInterval: 1
-  retreat: 3
+  cycleCounter: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
