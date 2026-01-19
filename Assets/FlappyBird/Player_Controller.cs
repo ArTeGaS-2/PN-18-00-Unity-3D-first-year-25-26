@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,14 @@ public class Player_Controller : MonoBehaviour
     [Header("Режим блювоти")]
     public float rotateSpeed = 0f;
     public bool vomMode = false;
+
+    [Header("Кути обертання персонажа")]
+    public float upAngle = -30f; // Кут під'йому в гору
+    public float downAngle = 20f; // Кут падіння в низ
+
+    [Header("Параметри плавного обертання")]
+    public float rotationSpeed = 8f; // Швидкість обертання
+    private float targetXAngle; // Цільовий кут по осі X
 
     private void Start()
     {
@@ -36,6 +45,9 @@ public class Player_Controller : MonoBehaviour
             rb.AddForce(Vector3.up * jumpVelocity,
                 ForceMode.Impulse);
         }
+        ApplyInputAngle();
+        ApplySmoothRotate();
+
     }
     private void LateUpdate()
     {
@@ -47,5 +59,28 @@ public class Player_Controller : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         SceneManager.LoadScene(1);
+    }
+    private void ApplyInputAngle()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) ||
+            Input.GetMouseButtonDown(0))
+        {
+            targetXAngle = upAngle;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space) ||
+                 Input.GetMouseButtonUp(0))
+        {
+            targetXAngle = downAngle;
+        }
+    }
+    private void ApplySmoothRotate()
+    {
+        // Встановлює цільове обертання у тимчасову змінну - targetRot
+        Quaternion targetRot = Quaternion.Euler(targetXAngle, 0, 0);
+        // До поточного кута обертання застосовується плавне обертання
+        transform.rotation = Quaternion.Lerp(
+            transform.rotation,             // Поточний кут
+            targetRot,                      // Цільовий кут
+            rotationSpeed * Time.deltaTime);// Час за який обертаємо
     }
 }
