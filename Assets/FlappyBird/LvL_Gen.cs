@@ -28,11 +28,16 @@ public class LvL_Gen : MonoBehaviour
             if (currentCycleNum > cycleCounter)
             {
                 Instantiate( // Створити об'єкт
-                listOfAnotherPrefabs[0], // шаблон об'єкту
+                listOfAnotherPrefabs[listCounter], // шаблон об'єкту
                 pos, // положення
                 Quaternion.identity); // обертання
 
                 currentCycleNum = 0;
+                listCounter++;
+                if (listCounter >= listOfAnotherPrefabs.Count)
+                {
+                    listCounter = 0;
+                }
             }
             else
             {
