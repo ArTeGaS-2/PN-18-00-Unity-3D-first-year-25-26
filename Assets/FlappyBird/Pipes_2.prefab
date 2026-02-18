@@ -485,6 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2335588366641684123}
   - component: {fileID: -1667647573698286931}
+  - component: {fileID: 4974495426367218035}
   m_Layer: 0
   m_Name: Pipes_2
   m_TagString: Untagged
@@ -523,3 +524,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+--- !u!114 &4974495426367218035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8392919320397796134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956b6e37e9c8a7c46bc8987fca82aeb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
