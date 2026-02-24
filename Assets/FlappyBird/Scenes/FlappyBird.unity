@@ -686,7 +686,7 @@ MonoBehaviour:
   camera: {fileID: 797090501}
   jumpVelocity: 6
   rotateSpeed: 100
-  vomMode: 0
+  vomMode: 1
   upAngle: -30
   downAngle: 20
   rotationSpeed: 8
@@ -816,7 +816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &543780838
 MonoBehaviour:
   m_ObjectHideFlags: 0

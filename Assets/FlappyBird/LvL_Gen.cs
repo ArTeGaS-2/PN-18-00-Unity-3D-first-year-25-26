@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class LvL_Gen : MonoBehaviour
 {
-    [Header("Шаблони труб")]
-    public GameObject pipesPrefab; // шаблон труб (налаштований зразок)
-    public List<GameObject> listOfAnotherPrefabs; // інші префаби
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ")]
+    public GameObject pipesPrefab; // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ)
+    public List<GameObject> listOfAnotherPrefabs; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-    [Header("Загальні налаштування")]
-    [Range(0f, 5f)] public float heightRange; // діапазон висоти труб
-    [Range(0.1f, 5f)] public float spawnInterval; // інтервал створення
-    public int cycleCounter = 3; // підрахунок труб
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
+    [Range(0f, 5f)] public float heightRange; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+    [Range(0.1f, 5f)] public float spawnInterval; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public int cycleCounter = 3; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
-    private int listCounter = 0; // пам'ять про номер останнього шаблону
+    private int listCounter = 0; // пїЅпїЅпїЅ'пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     private IEnumerator SpawnPipes()
     {
@@ -27,10 +27,10 @@ public class LvL_Gen : MonoBehaviour
 
             if (currentCycleNum > cycleCounter)
             {
-                Instantiate( // Створити об'єкт
-                listOfAnotherPrefabs[listCounter], // шаблон об'єкту
-                pos, // положення
-                Quaternion.identity); // обертання
+                Instantiate( // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ'пїЅпїЅпїЅ
+                listOfAnotherPrefabs[listCounter], // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ'пїЅпїЅпїЅпїЅ
+                pos, // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+                Quaternion.identity); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
                 currentCycleNum = 0;
                 listCounter++;
@@ -41,10 +41,10 @@ public class LvL_Gen : MonoBehaviour
             }
             else
             {
-                Instantiate( // Створити об'єкт
-               pipesPrefab, // шаблон об'єкту
-               pos, // положення
-               Quaternion.identity); // обертання
+                Instantiate( // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ'пїЅпїЅпїЅ
+               pipesPrefab, // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ'пїЅпїЅпїЅпїЅ
+               pos, // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+               Quaternion.identity); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
                 currentCycleNum++;
             }
