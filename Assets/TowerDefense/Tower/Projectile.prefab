@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4802578309038696084}
   - component: {fileID: 7378085618364642254}
   - component: {fileID: 442259820196128096}
+  - component: {fileID: 6347492581750723610}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -105,3 +106,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6347492581750723610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918166836192390824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 733b3c9d0483cd04db0873b02cc0bc52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  damage: 1
+  speed: 5

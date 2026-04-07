@@ -12,18 +12,27 @@ public class Tower : MonoBehaviour
     [SerializeField] float projectileSpeed = 5f; //Швидкість снаряду
 
     [Header("Загальні данні")]
+    [SerializeField] GameObject spawnPoint; // Точка появи проджектайлу
     [SerializeField] float baseBuildCost = 15f; // Ціна вежі
 
     private List<GameObject> enemiesList; // Вороги в зоні досяжності пострілу
-
-    public void ProjectileSpawn()
+    private void Start()
+    {
+        StartCoroutine(ProjectileSpawnCycle());
+    }
+    private void ProjectileSpawn()
     {
         GameObject projectile = Instantiate( // Зберігаємо об'єкт в змінну
             projcetilePrefab, // посилання на шаблон
-            transform.position, // позиція спавну
+            spawnPoint.transform.position, // позиція спавну
             Quaternion.identity); // обертання
-
-        projectile.transform.LookAt( // обертаємо у напрямку ворога
-            enemiesList[0].transform.position); // визначаємо ворога і його XYZ
+    }
+    private IEnumerator ProjectileSpawnCycle()
+    {
+        while (true)
+        {
+            ProjectileSpawn(); // Момент створення снаряду
+            yield return new WaitForSeconds(shootInterval); // Затримка
+        }
     }
 }
