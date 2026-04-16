@@ -21,4 +21,22 @@ public class EnemyAgent : MonoBehaviour
             GameObject.Find(targetName // Знаходимо об'єкт з назвою targetName
             ).transform.position); // Встановлюємо ціль для руху ворога
     }
+    public void TakeDamage(float damage)
+    {
+        if (enemyCurrentHP > 0) // Поточне ХП більше нуля
+        {
+            if (enemyCurrentHP >= damage) // нанесено DMG не більше ніж є
+            {
+                enemyCurrentHP -= damage;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 }

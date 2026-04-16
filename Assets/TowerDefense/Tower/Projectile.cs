@@ -18,4 +18,11 @@ public class Projectile : MonoBehaviour
 
         transform.LookAt(target.transform);
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            gameObject.GetComponent<EnemyAgent>().TakeDamage(damage);
+        }
+    }
 }
