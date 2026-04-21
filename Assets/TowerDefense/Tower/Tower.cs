@@ -19,7 +19,7 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         StartCoroutine(ProjectileSpawnCycle());
-    }
+    } 
     private void ProjectileSpawn()
     {
         GameObject projectile = Instantiate( // Зберігаємо об'єкт в змінну
@@ -32,7 +32,7 @@ public class Tower : MonoBehaviour
         while (true)
         {
             ProjectileSpawn(); // Момент створення снаряду
-            yield return new WaitForSeconds(shootInterval); // Затримка
+            yield return new WaitForSecondsRealtime(shootInterval); // Затримка
         }
     }
 }

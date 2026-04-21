@@ -8,7 +8,7 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] string targetName; // Назва цілі на сцені
     [SerializeField] float enemyMaxHP = 20f; // Максимальне здоров'я ворога
     [SerializeField] float enemyDamage = 5f; // Сила атаки ворога
-
+     
     private float enemyCurrentHP; // Поточне здоров'я ворога
     private NavMeshAgent agent; // Компонент NavMeshAgent для руху ворога
 

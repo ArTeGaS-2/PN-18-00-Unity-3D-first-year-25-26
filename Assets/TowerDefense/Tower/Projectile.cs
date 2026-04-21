@@ -22,7 +22,9 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            gameObject.GetComponent<EnemyAgent>().TakeDamage(damage);
+            collision.gameObject.GetComponent<EnemyAgent>(
+                ).TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 }
