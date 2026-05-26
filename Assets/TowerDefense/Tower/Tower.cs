@@ -4,35 +4,75 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    [Header("Снаряди")]
-    [SerializeField] GameObject projcetilePrefab; // Шаблон снаряду
-    [SerializeField] float shootInterval = 1.0f; // Затримка між пострілами
-    [SerializeField] float towerDamage = 1f; // Шкода яку наносить вежа
-    [SerializeField] float towerRange = 4f; // Дальність атаки
-    [SerializeField] float projectileSpeed = 5f; //Швидкість снаряду
+    [Header("Об'єкти")]
+    [SerializeField] GameObject projectilePrefab; // Шаблон снаряду
+    [SerializeField] GameObject spawnPoint; // Точка спавну снаряду
 
-    [Header("Загальні данні")]
-    [SerializeField] GameObject spawnPoint; // Точка появи проджектайлу
-    [SerializeField] float baseBuildCost = 15f; // Ціна вежі
+    [Header("Параметри вежі")]
+    [SerializeField] float attackInterval = 1f; // Інтервал між атаками
+    [SerializeField] float attackDamage = 1f; // Шкода від атаки
+    [SerializeField] float attackRadius = 5f; // Радіус атаки вежі
 
     private List<GameObject> enemiesList; // Вороги в зоні досяжності пострілу
+
+    private bool enemiesInRadius = false;
+    private Coroutine towerAttack;
+
+    private void Awake()
+    {
+        enemiesList = new List<GameObject>();
+    }
+
     private void Start()
     {
-        StartCoroutine(ProjectileSpawnCycle());
+        // StartCoroutine(ProjectileSpawnCycle());
+        towerAttack = null;
     } 
-    private void ProjectileSpawn()
-    {
-        GameObject projectile = Instantiate( // Зберігаємо об'єкт в змінну
-            projcetilePrefab, // посилання на шаблон
-            spawnPoint.transform.position, // позиція спавну
-            Quaternion.identity); // обертання
-    }
     private IEnumerator ProjectileSpawnCycle()
     {
         while (true)
         {
-            ProjectileSpawn(); // Момент створення снаряду
-            yield return new WaitForSecondsRealtime(shootInterval); // Затримка
+            if (enemiesList.Count > 0)
+            {
+                Projectile projectile = Instantiate( // Зберігаємо об'єкт в змінну
+                    projectilePrefab, // посилання на шаблон
+                    spawnPoint.transform.position, // позиція спавну
+                    Quaternion.identity).GetComponent<Projectile>(); // обертання
+
+                projectile.target = enemiesList[0];
+            }
+            
+            yield return new WaitForSecondsRealtime(attackInterval); // Затримка
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            if (enemiesList.Count == 0)
+            {
+                towerAttack = StartCoroutine(ProjectileSpawnCycle());
+            }
+            enemiesList.Add(other.gameObject);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            if (enemiesList.Count == 0)
+            {
+                StopCoroutine(towerAttack);
+            }
+            enemiesList.Remove(other.gameObject);
+        }
+    }
+    public void OnEnemyDeath(GameObject enemy)
+    {
+        if (enemiesList.Count == 0)
+        {
+            StopCoroutine(towerAttack);
+        }
+        enemiesList.Remove(enemy);
     }
 }
