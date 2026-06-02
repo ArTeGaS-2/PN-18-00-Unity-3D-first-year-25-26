@@ -15,8 +15,8 @@ public class Tower : MonoBehaviour
 
     private List<GameObject> enemiesList; // Вороги в зоні досяжності пострілу
 
-    private bool enemiesInRadius = false;
-    private Coroutine towerAttack;
+    private bool enemiesInRadius = false; // Чи є вороги в радіусі атаки
+    private Coroutine towerAttack; // Посилання на корутину атаки вежі
 
     private void Awake()
     {
